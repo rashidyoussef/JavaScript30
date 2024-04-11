@@ -72,26 +72,52 @@ console.table(bydate)
 
     // Array.prototype.reduce()
     // 4. How many years did all the inventors live all together?
-    const reduceinventor = inventors.reduce(function(total, yearr){
-      return total + (yearr.passed - yearr.year)
-    },0)
-    console.log(reduceinventor)
-
+/* const reduceinventor = inventors.reduce(function(total, yearr){
+return total + (yearr.passed - yearr.year)
+},0)
+console.log(reduceinventor)
+*/
 
 
     // 5. Sort the inventors by years lived
+/* 
+const sortby = inventors.sort(function(oldest,youngest){
+if (oldest.passed - oldest.year > youngest.passed - youngest.year){
+        return 1
+      }
+      else {
+        return -1
+      }
+    })
+    console.table(sortby)
+ */
+
 
     // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
     // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
-
+// fakiu 
 
     // 7. sort Exercise
-    // Sort the people alphabetically by last name
+    // Sort the people alphabetically by first name
+ /*  const alpha = people.sort(function(lastt, next){
+    const [alast, afirst] = lastt.split(', ');
+    const [blast, bfirst] = lastt.split(', ');
+    return alast > blast ? 1 : -1
+  })
+console.table(alpha)
+ */
 
     // 8. Reduce Exercise
     // Sum up the instances of each of these
     const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
-
+const carros = data.reduce(function(cartotal, carcurr){
+  if (!cartotal[carcurr]){
+    cartotal[carcurr] = 0
+  }
+  cartotal[carcurr]++;
+  return cartotal;
+},{})
+console.log(carros)
   </script>
 </body>
 </html>
